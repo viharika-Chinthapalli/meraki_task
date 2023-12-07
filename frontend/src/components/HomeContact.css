@@ -1,0 +1,98 @@
+.contactDabb {
+  display: flex;
+}
+.contact{
+  height: 100vh;
+}
+
+.contactDabb .leftC {
+  width: 50%;
+}
+.contactDabb .rightC {
+  width: 50%;
+}
+
+.leftC h1 {
+  width: 70%;
+  margin: auto;
+  font-size: 4rem;
+  padding-top: 4rem;
+  line-height: 4rem;
+}
+
+.form input {
+  border: none;
+  padding: 0.5rem;
+}
+
+::placeholder {
+  color: black;
+  font-weight: 550;
+}
+
+.inRightC {
+  width: 55%;
+  height: 75%;
+  margin: auto;
+  padding-top: 4rem;
+  position: relative;
+}
+
+.inRightC h6 {
+  margin: 1.2rem 1.2rem 4rem 1.2rem;
+}
+
+#submit {
+  background-color: black;
+  color: white;
+  padding: 10px 90px 10px 20px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.form .error {
+  color: red;
+}
+
+.form-group input {
+  width: 100%;
+}
+.form-group input:focus{
+  outline: none;
+}
+
+@media (max-width: 1200px){
+  .leftC h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 700px){
+  .contactDabb{
+    flex-direction: column;
+  }
+
+  .contactDabb .leftC, .contactDabb .rightC  {
+    width: 100%;
+    
+  }
+  .contactDabb .leftC{
+    /* background-color: aqua; */
+    margin-top: 20%;
+  }
+  .leftC h1 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .inRightC h6 {
+    margin: 0.5rem;
+  }
+
+  .inRightC {
+    padding-top: 0;
+  }
+}

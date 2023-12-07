@@ -1,0 +1,90 @@
+body {
+  position: relative;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 85%;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  margin-bottom: 2%;
+}
+
+.foot .f1 {
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  width: 25%;
+  align-items: center;
+}
+
+.f1 p {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.f1 p a {
+  text-decoration: none;
+  color: black;
+}
+
+.b2024 {
+  margin-right: 2rem;
+}
+
+.box1 #btn {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+
+.box1 button {
+  font-size: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.lists {
+  width: 100%;
+}
+.lists ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.lists ul li {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid black;
+}
+
+.lists ul li.active {
+  background-color: black;
+}
+
+@media (max-width: 1200px) {
+  .foot {
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 15%;
+  }
+
+  .foot .f1 {
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .f1 p, .base div{
+    font-size: 10px;
+  }
+}
+ 

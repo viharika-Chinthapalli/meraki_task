@@ -1,0 +1,81 @@
+.dabba{
+    display: flex;
+}
+
+.homeServices .left{
+    width: 50%;
+    height: 100vh;
+    background-image: url(../assests/FILTER.png);
+    /* background-repeat: no-repeat; */
+}
+
+.homeServices .right{
+    width: 50%;
+    height: 100vh;
+} 
+
+.left h1{
+    color: white;
+}
+
+.left #text{
+    background-color: rgb(68, 110, 68);
+    color: white;
+}
+
+.left, .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inLeft, .inRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left .inLeft, .right .inRight{
+    width: 90%;
+    height: 50%;
+}
+
+.left #text, .right #text{
+    background-color: black;
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 5rem;
+} 
+
+#text a{
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 1200px){
+    .dabba{
+        display: flex;
+        flex-direction: column;
+        /* background-color: aquamarine; */
+    }
+
+    .homeServices .left, .homeServices .right{
+        width: 100%;
+        /* background-color: aqua; */
+    }
+
+    .homeServices .right{
+        margin-bottom: 20%;
+    }
+}
+@media (max-width: 700px){
+    .left #text, .right #text{
+        font-size: 3rem;
+    }
+
+}

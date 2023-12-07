@@ -1,0 +1,41 @@
+body {
+  position: relative;
+}
+.conta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem 4rem 0 2rem; 
+  position: absolute;
+  width: 80%;
+}
+
+#hire {
+  background-color: black;
+  color: white;
+  padding: 10px 90px 10px 20px;
+  border: none;
+} 
+ 
+@media (max-width: 1200px){
+  .conta{
+    width: 60%;
+  }
+} 
+
+@media (max-width: 700px){
+  .conta{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .conta img{ 
+    height: 50px;
+  }
+
+  #hire {
+    font-size: 10px;
+  } 
+} 
