@@ -4,59 +4,64 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-require("dotenv").config(); 
+require("dotenv").config();
 
-const db = mysql.createConnection({
+const pool = mysql.createPool({
+  connectionLimit: 100,
   host: "localhost",
-  user: process.env.DB_USER, 
+  user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: "contactdetails",
   port: 3306,
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error("MySQL Connection Error:", err);
-  } else {
-    console.log("Connected to MySQL database");
-  }
-});
-
 app.post("/contactdetails", (req, res) => {
-  if (!req.body.name || !req.body.email || !req.body.message) {
-    console.log("Fields are empty");
-    return res.status(400).json("Fields are empty");
-  }
-  const sql =
-    "INSERT INTO contact (`name`, `email`, `message`) VALUES (?, ?, ?)";
-  const values = [req.body.name, req.body.email, req.body.message];
-  console.log("Values:", values);
-  db.query(sql, values, (err, data) => {
+  pool.getConnection((err, connection) => {
     if (err) {
-      console.log("Errorr:", err);
-      return res.json(err);
+      console.error("Error getting MySQL connection:", err);
+      return res.status(500).json("Internal Server Error");
     }
-    console.log("Inserted data:", data);
-    return res.json(data);
+
+    const sql =
+      "INSERT INTO contact (`name`, `email`, `message`) VALUES (?, ?, ?)";
+    const values = [req.body.name, req.body.email, req.body.message];
+
+    connection.query(sql, values, (err, data) => {
+      connection.release();
+
+      if (err) {
+        console.error("MySQL query error:", err);
+        return res.status(500).json("Internal Server Error");
+      }
+
+      console.log("Inserted data:", data);
+      return res.json(data);
+    });
   });
 });
 
 app.post("/contact", (req, res) => {
-  if (!req.body.name || !req.body.email || !req.body.message) {
-    console.log("Fields are empty");
-    return res.status(400).json("Fields are empty");
-  }
-  const sql =
-    "INSERT INTO contactpage (`name`, `email`, `message`) VALUES (?, ?, ?)";
-  const values = [req.body.name, req.body.email, req.body.message];
-  console.log("Values:", values);
-  db.query(sql, values, (err, data) => {
+  pool.getConnection((err, connection) => {
     if (err) {
-      console.log("Errorr:", err);
-      return res.json(err);
+      console.error("Error getting MySQL connection:", err);
+      return res.status(500).json("Internal Server Error");
     }
-    console.log("Inserted data:", data);
-    return res.json(data);
+
+    const sql =
+      "INSERT INTO contactpage (`name`, `email`, `message`) VALUES (?, ?, ?)";
+    const values = [req.body.name, req.body.email, req.body.message];
+
+    connection.query(sql, values, (err, data) => {
+      connection.release();
+
+      if (err) {
+        console.error("MySQL query error:", err);
+        return res.status(500).json("Internal Server Error");
+      }
+
+      console.log("Inserted data:", data);
+      return res.json(data);
+    });
   });
 });
 
