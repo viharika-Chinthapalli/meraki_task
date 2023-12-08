@@ -8,6 +8,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const [errors, setErrors] = useState({
     name: "",
@@ -66,8 +67,14 @@ const Contact = () => {
           email,
           message,
         })
-        .then((res) => console.log("Submitted Successfully!!"))
-        .catch((err) => console.log(err));
+        .then((res) => {
+          console.log("Submitted Successfully!!");
+          setSubmissionStatus("success");
+        })
+        .catch((err) => {
+          console.log(err);
+          setSubmissionStatus("error");
+        });
     }
   };
 
@@ -84,6 +91,16 @@ const Contact = () => {
               GET IN TOUCH TODAY - WE’RE AT YOUR SERVICE. DROP A NOTE, AND WE’LL
               GET BACK TO YOU PROMPTLY
             </h6>
+            {submissionStatus === "success" && (
+              <div className="success-message">
+                Form submitted successfully!
+              </div>
+            )}
+            {submissionStatus === "error" && (
+              <div className="error-message">
+                Error submitting the form. Please try again later.
+              </div>
+            )}
             <div className="form">
               <form onSubmit={handleSubmit} encType="application/json">
                 <div className="form-group">
