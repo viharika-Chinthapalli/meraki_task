@@ -4,11 +4,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-require("dotenv").config();
+require("dotenv").config(); 
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: process.env.DB_USER,
+  user: process.env.DB_USER, 
   password: process.env.DB_PASSWORD,
   database: "contactdetails",
 });

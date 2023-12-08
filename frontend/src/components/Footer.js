@@ -14,7 +14,7 @@ const Footer = ({ handleButtonClick: parentHandleButtonClick }) => {
 
   return (
     <div className="foot">
-      <div className="f1">
+      <div className="f1 base1">
         <p>SOCIAL:</p>
         <p>
           <a
@@ -56,7 +56,7 @@ const Footer = ({ handleButtonClick: parentHandleButtonClick }) => {
           </ul>
         </div>
       </div>
-      <div className="f1 base">
+      <div className="f1 base base1">
         <div className="b2024">2024</div>
         <div>THE MERAKI STUDIO</div>
       </div>

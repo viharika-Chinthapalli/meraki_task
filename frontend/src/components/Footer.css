@@ -10,7 +10,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 5%;
-  margin-bottom: 2%;
+  /* background-color: aquamarine; */
 }
 
 .foot .f1 {
@@ -68,13 +68,12 @@ body {
 .lists ul li.active {
   background-color: black;
 }
-
-@media (max-width: 1200px) {
+ 
+@media (max-width: 700px){
   .foot {
     flex-direction: column;
     align-items: center;
-    width: 75%;
-    height: 15%;
+    width: 90%;
   }
 
   .foot .f1 {
@@ -83,9 +82,11 @@ body {
     font-weight: bold;
     width: 100%;
     justify-content: space-between;
-  }
-  .f1 p, .base div{
+  } 
+ .f1 p, .base div{
     font-size: 10px;
   }
+  .foot .base1{
+    display: none;
+  }
 }
- 

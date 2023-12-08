@@ -90,7 +90,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="contactDabba">
-        <div className="leftC">
+        <div className="leftCC">
           <div className="l1 l">
             <p>WORK EMAIL:</p>
             <h3>HELLO@THEMERAKISTUDIO.CO</h3>
@@ -108,7 +108,7 @@ const Contact = () => {
             </h3>
           </div>
         </div>
-        <div className="rightC">
+        <div className="rightCC">
           <div className="inRightC">
             <h6>
               GET IN TOUCH TODAY - WE’RE AT YOUR SERVICE. DROP A NOTE, AND WE’LL

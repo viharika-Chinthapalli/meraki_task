@@ -3,7 +3,7 @@
 }
 
 .contact {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .contactDabb .leftC {
@@ -70,6 +70,10 @@
   .leftC h1 {
     font-size: 2rem;
   }
+
+  .contactDabb .rightC {
+    height: 70vh;
+  }
 }
 
 @media (max-width: 700px) {
@@ -81,8 +85,10 @@
   .contactDabb .rightC {
     width: 100%;
   }
+  .contactDabb .rightC{
+    height: 60vh;
+  }
   .contactDabb .leftC {
-    /* background-color: aqua; */
     margin-top: 20%;
   }
   .leftC h1 {
