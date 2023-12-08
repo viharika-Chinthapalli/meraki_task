@@ -11,6 +11,7 @@ const db = mysql.createConnection({
   user: process.env.DB_USER, 
   password: process.env.DB_PASSWORD,
   database: "contactdetails",
+  port: 3306,
 });
 
 db.connect((err) => {
@@ -32,8 +33,8 @@ app.post("/contactdetails", (req, res) => {
   console.log("Values:", values);
   db.query(sql, values, (err, data) => {
     if (err) {
-      console.error("Error:", err);
-      return res.json("ERROR");
+      console.log("Errorr:", err);
+      return res.json(err);
     }
     console.log("Inserted data:", data);
     return res.json(data);
@@ -51,8 +52,8 @@ app.post("/contact", (req, res) => {
   console.log("Values:", values);
   db.query(sql, values, (err, data) => {
     if (err) {
-      console.error("Error:", err);
-      return res.json("ERROR");
+      console.log("Errorr:", err);
+      return res.json(err);
     }
     console.log("Inserted data:", data);
     return res.json(data);

@@ -45,11 +45,7 @@ const Contact = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // Clear the error for the corresponding field when the user starts typing
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
-
-    // Update the state for the corresponding field
     if (name === "name") {
       setName(value);
     } else if (name === "email") {
