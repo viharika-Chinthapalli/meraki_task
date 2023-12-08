@@ -104,7 +104,7 @@ const Works = () => {
             </div>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
