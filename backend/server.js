@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const pool = mysql.createPool({
   connectionLimit: 100,
-  host: "localhost",
+  host: "127.0.0.1",
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: "contactdetails",
@@ -16,10 +16,12 @@ const pool = mysql.createPool({
 });
 
 app.post("/contactdetails", (req, res) => {
+  console.log("Received request for /contactdetails");
+  
   pool.getConnection((err, connection) => {
     if (err) {
-      console.error("Error getting MySQL connection:", err);
-      return res.status(500).json("Internal Server Error");
+      console.log("Error getting MySQL connection:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
 
     const sql =
@@ -30,8 +32,8 @@ app.post("/contactdetails", (req, res) => {
       connection.release();
 
       if (err) {
-        console.error("MySQL query error:", err);
-        return res.status(500).json("Internal Server Error");
+        console.log("MySQL query error:", err);
+        return res.status(500).json({ error: "Internal Server Error" });
       }
 
       console.log("Inserted data:", data);
@@ -41,12 +43,14 @@ app.post("/contactdetails", (req, res) => {
 });
 
 app.post("/contact", (req, res) => {
+  console.log("Received request for /contact");
+
   pool.getConnection((err, connection) => {
     if (err) {
-      console.error("Error getting MySQL connection:", err);
-      return res.status(500).json("Internal Server Error");
+      console.log("Error getting MySQL connection:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
-
+ 
     const sql =
       "INSERT INTO contactpage (`name`, `email`, `message`) VALUES (?, ?, ?)";
     const values = [req.body.name, req.body.email, req.body.message];
@@ -55,8 +59,8 @@ app.post("/contact", (req, res) => {
       connection.release();
 
       if (err) {
-        console.error("MySQL query error:", err);
-        return res.status(500).json("Internal Server Error");
+        console.log("MySQL query error:", err);
+        return res.status(500).json({ error: "Internal Server Error" });
       }
 
       console.log("Inserted data:", data);
@@ -66,5 +70,5 @@ app.post("/contact", (req, res) => {
 });
 
 app.listen(8080, () => {
-  console.log("Listening...");
-});
+  console.log("Server is listening on port 8080...");
+}); 
