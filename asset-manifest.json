@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/meraki_task/static/css/main.ea7b8fb4.css",
+    "main.js": "/meraki_task/static/js/main.939927a0.js",
+    "static/media/FILTER.png": "/meraki_task/static/media/FILTER.b131cbfee9706842c358.png",
+    "static/media/Rectangle 14.png": "/meraki_task/static/media/Rectangle 14.037031d9d4af8c7c31cf.png",
+    "static/media/Rectangle 9.png": "/meraki_task/static/media/Rectangle 9.4d51b90ff1a4af80093c.png",
+    "static/media/HP_HERO.png": "/meraki_task/static/media/HP_HERO.e46e94125fc48a0082bb.png",
+    "index.html": "/meraki_task/index.html",
+    "main.ea7b8fb4.css.map": "/meraki_task/static/css/main.ea7b8fb4.css.map",
+    "main.939927a0.js.map": "/meraki_task/static/js/main.939927a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea7b8fb4.css",
+    "static/js/main.939927a0.js"
+  ]
+}
