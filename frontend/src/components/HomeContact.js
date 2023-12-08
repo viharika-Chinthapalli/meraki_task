@@ -19,36 +19,26 @@ const Contact = () => {
     let valid = true;
     const newErrors = { name: "", email: "", message: "" };
 
-    // Validate name
     if (!name.trim()) {
       newErrors.name = "REQUIRED";
       valid = false;
     }
-
-    // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim() || !emailRegex.test(email)) {
       newErrors.email = "REQUIRED";
       valid = false;
     }
-
-    // Validate message
     if (!message.trim()) {
       newErrors.message = "REQUIRED";
       valid = false;
     }
-
     setErrors(newErrors);
     return valid;
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // Clear the error for the corresponding field when the user starts typing
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
-
-    // Update the state for the corresponding field
     if (name === "name") {
       setName(value);
     } else if (name === "email") {
@@ -66,12 +56,16 @@ const Contact = () => {
       console.log("Email:", email);
       console.log("Message:", message);
 
-      setName(""); 
+      setName("");
       setEmail("");
       setMessage("");
 
       axios
-        .post("http://localhost:8080/contactdetails", { name, email, message })
+        .post(`${process.env.REACT_APP_API_URL}/contactdetails`, {
+          name,
+          email,
+          message,
+        })
         .then((res) => console.log("Submitted Successfully!!"))
         .catch((err) => console.log(err));
     }
@@ -86,7 +80,7 @@ const Contact = () => {
         </div>
         <div className="rightC">
           <div className="inRightC">
-            <h6> 
+            <h6>
               GET IN TOUCH TODAY - WE’RE AT YOUR SERVICE. DROP A NOTE, AND WE’LL
               GET BACK TO YOU PROMPTLY
             </h6>

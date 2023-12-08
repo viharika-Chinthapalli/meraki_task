@@ -1,10 +1,11 @@
 .nav {
   float: right;
   height: 90vh;
-  width: 5%; 
+  width: 5%;
   top: 0;
   z-index: 100;
 }
+
 .nav ul {
   list-style-type: none;
   padding: 0;
@@ -41,7 +42,6 @@
     float: right;
     height: 100vh;
     width: 15%;
-    /* background-color: rgb(231, 226, 220); */
     top: 0;
     z-index: 100;
   }
@@ -53,12 +53,12 @@
     transition: color 0.3s ease;
   }
 }
-@media (max-width: 700px) { 
+
+@media (max-width: 700px) {
   .nav {
     float: top;
     height: 10%;
     width: 100vw;
-    /* background-color: rgb(234, 228, 220); */
     z-index: 100;
     position: absolute;
     top: 7%;
@@ -72,7 +72,7 @@
     width: 100%;
     top: -50%;
     height: 50px;
-  } 
+  }
   .nav li {
     list-style-type: none;
     font-size: 0.8rem;

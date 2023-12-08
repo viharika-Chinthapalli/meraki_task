@@ -6,7 +6,6 @@ import Contact from "./components/Contact";
 import OurServices from "./components/OurServices";
 import Works from "./components/Works";
 import HomeContact from "./components/HomeContact";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
           />
           <Route exact path="/works" element={<Works />} />
         </Routes>
-      </Router> 
+      </Router>
     </div>
   );
 }

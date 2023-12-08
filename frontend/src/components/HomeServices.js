@@ -10,7 +10,7 @@ const HomeServices = () => {
   const [blueprints, setBlueprints] = useState(["LAUNCH", "SELL", "GROW"]);
   const [displayedTrademarkIndex, setDisplayedTrademarkIndex] = useState(0);
   const [displayedBlueprintIndex, setDisplayedBlueprintIndex] = useState(0);
- 
+
   const handleScrollButtonClick = () => {
     const nextTrademarkIndex =
       (displayedTrademarkIndex + 1) % trademarks.length;
@@ -27,8 +27,8 @@ const HomeServices = () => {
 
   return (
     <div className="homeServices">
-      <Navbar /> 
-      <Header/>
+      <Navbar />
+      <Header />
       <div className="dabba">
         <div className="left">
           <div className="inLeft">
@@ -60,7 +60,7 @@ const HomeServices = () => {
       </div>
       <Footer handleButtonClick={handleScrollButtonClick} />
     </div>
-  ); 
+  );
 };
 
 export default HomeServices;

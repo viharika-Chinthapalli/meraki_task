@@ -4,14 +4,14 @@ import "./Home.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
- 
+
 const Home = () => {
   const navigate = useNavigate();
   const handleScrollButtonClick = () => {
     navigate("/services");
-  }
+  };
   return (
-    <div className="home"> 
+    <div className="home">
       <Navbar />
       <div className="divv">
         <Header />

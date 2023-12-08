@@ -52,6 +52,7 @@ body {
 .lists {
   width: 100%;
 }
+
 .lists ul {
   display: flex;
   justify-content: space-between;

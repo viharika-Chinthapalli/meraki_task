@@ -9,7 +9,7 @@ import img3 from "../assests/Rectangle 20.png";
 import img4 from "../assests/Rectangle 9.png";
 
 const Works = () => {
-  return ( 
+  return (
     <div className="works">
       <Navbar />
       <div className="w1">
@@ -24,7 +24,6 @@ const Works = () => {
             <button id="hire">HIRE US</button>
           </div>
         </div>
-      
 
         <div className="wbody">
           <div className="row">

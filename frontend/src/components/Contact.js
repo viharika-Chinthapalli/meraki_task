@@ -72,7 +72,7 @@ const Contact = () => {
       setMessage("");
 
       axios
-        .post("http://localhost:8080/contact", { name, email, message })
+        .post(`${process.env.REACT_APP_API_URL}/contact`, { name, email, message })
         .then((res) => console.log("Submitted Successfully!!"))
         .catch((err) => console.log(err));
     }
@@ -160,7 +160,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
       <div className="foot">
         <div className="f1">
           <p>A MATTER OF LIFE AND DEATH? WRITE US HERE:</p>

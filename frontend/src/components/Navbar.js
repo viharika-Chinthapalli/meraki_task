@@ -12,21 +12,26 @@ const Navbar = () => {
     navLinks.forEach((link) => {
       const linkPath = link.getAttribute("href");
 
-      if ((activePage === "/" && linkPath === "/") || (activePage !== "/" && linkPath !== "/" && activePage.includes(linkPath))) {
+      if (
+        (activePage === "/" && linkPath === "/") ||
+        (activePage !== "/" &&
+          linkPath !== "/" &&
+          activePage.includes(linkPath))
+      ) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
       }
     });
   }, [location.pathname]);
- 
+
   return (
     <div className="nav">
       <ul id="links">
         <li>
           <Link to="/">HOMEPAGE</Link>
         </li>
-        <li> 
+        <li>
           <Link to="/works">WORKS</Link>
         </li>
         <li>

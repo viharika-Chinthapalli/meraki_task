@@ -1,13 +1,15 @@
 .contactDabb {
   display: flex;
 }
-.contact{
+
+.contact {
   height: 100vh;
 }
 
 .contactDabb .leftC {
   width: 50%;
 }
+
 .contactDabb .rightC {
   width: 50%;
 }
@@ -59,26 +61,27 @@
 .form-group input {
   width: 100%;
 }
-.form-group input:focus{
+
+.form-group input:focus {
   outline: none;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
   .leftC h1 {
     font-size: 2rem;
   }
 }
 
-@media (max-width: 700px){
-  .contactDabb{
+@media (max-width: 700px) {
+  .contactDabb {
     flex-direction: column;
   }
 
-  .contactDabb .leftC, .contactDabb .rightC  {
+  .contactDabb .leftC,
+  .contactDabb .rightC {
     width: 100%;
-    
   }
-  .contactDabb .leftC{
+  .contactDabb .leftC {
     /* background-color: aqua; */
     margin-top: 20%;
   }

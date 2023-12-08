@@ -9,14 +9,16 @@ const OurServices = () => {
   const { pathname } = useLocation();
   const services = ["WEB", "LAUNCH", "APP", "SELL", "SEO", "GROW"];
   const initialIndex = services.indexOf(pathname.split("/").pop());
-  const [currentIndex, setCurrentIndex] = useState(initialIndex >= 0 ? initialIndex : 0);
+  const [currentIndex, setCurrentIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
   const [content, setContent] = useState({});
   const [activeListItem, setActiveListItem] = useState(0);
-  
+
   useEffect(() => {
     const currentService = services[currentIndex];
     let newContent = {};
- 
+
     if (currentService === "WEB") {
       newContent = {
         header: "WEB",
@@ -142,9 +144,9 @@ const OurServices = () => {
         <div className="body">
           <div className=" b1">
             <ul>
-            <li className={activeListItem === 0 ? 'active' : ''}></li>
-            <li className={activeListItem === 1 ? 'active' : ''}></li>
-            <li className={activeListItem === 2 ? 'active' : ''}></li>
+              <li className={activeListItem === 0 ? "active" : ""}></li>
+              <li className={activeListItem === 1 ? "active" : ""}></li>
+              <li className={activeListItem === 2 ? "active" : ""}></li>
             </ul>
           </div>
           <div className="body2">
